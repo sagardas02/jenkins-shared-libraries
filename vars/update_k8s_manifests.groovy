@@ -29,7 +29,7 @@ def call(Map config = [:]) {
             # Update main application deployment - note the correct image name 
             sed -i "s|image: sagar4work/bankapp:.*|image: sagar4work/bankapp:${imageTag}|g" ${manifestsPath}/bankapp-deployment.yml
             
-                git add ${manifestsPath}/*.yaml
+                git add ${manifestsPath}/*.yml
                 git commit -m "Update image tags to ${imageTag} and ensure correct domain [ci skip]"
                 
                 # Set up credentials for push
