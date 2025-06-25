@@ -27,7 +27,7 @@ def call(Map config = [:]) {
         // Update deployment manifests with new image tags - using proper Linux sed syntax
         sh """
             # Update main application deployment - note the correct image name 
-            sed -i "s|image: sagar4work/bankapp:.*|image: sagar4work/bankapp:${imageTag}|g" ${manifestsPath}/bankapp-deployment.yaml
+            sed -i "s|image: sagar4work/bankapp:.*|image: sagar4work/bankapp:${imageTag}|g" ${manifestsPath}/bankapp-deployment.yml
             
                 git add ${manifestsPath}/*.yaml
                 git commit -m "Update image tags to ${imageTag} and ensure correct domain [ci skip]"
